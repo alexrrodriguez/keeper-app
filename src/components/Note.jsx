@@ -1,5 +1,7 @@
 import React from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
+import Fab from "@material-ui/core/Fab";
+import Zoom from "@material-ui/core/Zoom";
 
 function Note(props) {
   function handleClick() {
@@ -10,9 +12,11 @@ function Note(props) {
     <div className="note">
       <h1>{props.title}</h1>
       <p>{props.content}</p>
-      <button onClick={handleClick}>
-        <DeleteIcon />
-      </button>
+      <Zoom in={true}>
+        <Fab onClick={handleClick}>
+          <DeleteIcon />
+        </Fab>
+      </Zoom>
     </div>
   );
 }
